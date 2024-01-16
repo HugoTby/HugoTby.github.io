@@ -5,44 +5,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=, initial-scale=1.0">
   <title>HugoTby</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.plyr.io/3.4.6/plyr.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="container">
-    <video controls crossorigin playsinline
-      poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player">
-      <!-- Video files -->
-      <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
-      <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
-      <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4"
-        size="1080">
-      <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1440p.mp4" type="video/mp4"
-        size="1440">
+    <div class="videoWrapper">
+      <div class="ambilightWrapper">
+        <div class="aspectRatio">
+          <video controls crossorigin playsinline
+            poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player">
+            <!-- Video files -->
+            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4"
+              size="576">
+            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4"
+              size="720">
+            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4"
+              size="1080">
+            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1440p.mp4" type="video/mp4"
+              size="1440">
 
-      <!-- Caption files -->
-      <track kind="captions" label="English" srclang="en"
-        src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default>
-      <track kind="captions" label="Français" srclang="fr"
-        src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
+            <!-- Caption files -->
+            <track kind="captions" label="Anglais (par défaut)" srclang="en"
+              src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default>
+            <track kind="captions" label="Français" srclang="fr"
+              src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
 
-      <!-- Fallback for browsers that don't support the <video> element -->
-      <a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
-    </video>
+            <track kind="captions" label="Allemand" srclang="de" src="subtiles/cc_de.vtt">
+            <track kind="captions" label="Espagnol" srclang="es" src="subtiles/cc_es.vtt">
+            <track kind="captions" label="Japonais" srclang="jp" src="subtiles/cc_jp.vtt">
+            <track kind="captions" label="Coréen" srclang="kr" src="subtiles/cc_kr.vtt">
 
-    <div class="actions">
-      <button type="button" class="btn js-play">Play</button>
-      <button type="button" class="btn js-pause">Pause</button>
-      <button type="button" class="btn js-stop">Stop</button>
-      <button type="button" class="btn js-rewind">Rewind</button>
-      <button type="button" class="btn js-forward">Forward</button>
+            <!-- Fallback for browsers that don't support the <video> element -->
+            <a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
+          </video>
+          <div class="actions">
+            <button type="button" class="btn js-play">Play</button>
+            <button type="button" class="btn js-pause">Pause</button>
+            <button type="button" class="btn js-stop">Stop</button>
+            <button type="button" class="btn js-rewind">Rewind</button>
+            <button type="button" class="btn js-forward">Forward</button>
+          </div>
+
+        </div>
+        <canvas id="ambilight"></canvas>
+
+      </div>
     </div>
   </div>
 
-
+  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="plyr.js"></script>
+  <script type="text/javascript" src="default.js"></script>
 </body>
-<script type="text/javascript" src="script.js"></script>
-<script src="https://cdn.plyr.io/3.4.6/plyr.js"></script>
+
 
 </html>
